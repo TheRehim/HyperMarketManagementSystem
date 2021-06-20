@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.Employees;
 
-public class Employee {
+public class Employee implements EmployeeManagement{
     public static String requiredpermissions = "employee";
     public int ID;
     public String FirstName;

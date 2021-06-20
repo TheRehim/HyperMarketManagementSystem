@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.Customers;
 
-public class Customer {
+public class Customer implements CustomerManagement{
     public static String requiredpermissions = "customer";
     public int ID;
     public String FirstName;

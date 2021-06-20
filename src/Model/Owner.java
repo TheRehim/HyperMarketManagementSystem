@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.Owners;
 
-public class Owner {
+public class Owner implements OwnerManagement{
     public static String requiredpermissions = "owner";
     public int ID;
     public String FirstName;

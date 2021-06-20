@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.Cashiers;
 
-public class Cashier extends Employee{
+public class Cashier extends Employee implements CashierSalesManagement{
     public static String requiredpermissions = "cashier";
 
     public Cashier() {

@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.ShoppingCarts;
 
-public class ShoppingCart {
+public class ShoppingCart implements ShoppingCartManagement{
     public static String requiredpermissions = "shoppingcart";
     public int SCID;
     public int SCCustomerID;

@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.Managers;
 
-public class Manager extends Employee {
+public class Manager extends Employee implements ManagerManagement{
     public static String requiredpermissions = "manager";
 
     public Manager(int ID, String firstName, String surName, String phoneNumber, String emailAddress, float salary) {
