@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.Customers;
 
-public class Customer implements CustomerManagement{
+public class Customer {
     public static String requiredpermissions = "customer";
     public int ID;
     public String FirstName;
@@ -69,14 +69,5 @@ public class Customer implements CustomerManagement{
 
     public void setCardInfo(String cardInfo) {
         CardInfo = cardInfo;
-    }
-
-    public String GetAll() {
-        String a = "";
-        for (Customer item : Customers) {
-            a += item.ID + " " + item.FirstName + " " + item.SurName + " " + item.PhoneNumber + " " + item.EmailAddress + " " + item.CardInfo + "\n";
-        }
-        return "ID" + " " + "FirstName" + " " + "SurName" + " " + "Phone Number" + " " + "Email Address" + " " + "Card Info" +
-                '\n' + a;
     }
 }
