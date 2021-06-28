@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.Products;
 
-public class Product{
+public class Product implements ProductManagement{
     public static String requiredpermissions = "product";
     public int ID;
     public String Name;
@@ -52,4 +52,12 @@ public class Product{
         Amount = amount;
     }
 
+    public String GetAll() {
+        String a = "";
+        for (Product item : Products) {
+            a += item.ID + " " + item.Name + " " + item.Price + " " + item.Amount + "\n";
+        }
+        return "ID" + " " + "Name" + " " + "Price" + "Amount" +
+                '\n' + a;
+    }
 }

@@ -1,6 +1,8 @@
 package Model;
 
-public class Owner{
+import static Model.DataBaseClasses.Owners;
+
+public class Owner implements OwnerManagement{
     public static String requiredpermissions = "owner";
     public int ID;
     public String FirstName;
@@ -58,5 +60,14 @@ public class Owner{
 
     public void setEmailAddress(String emailAddress) {
         EmailAddress = emailAddress;
+    }
+
+    public String GetAll() {
+        String a = "";
+        for (Owner item : Owners) {
+            a += item.ID + " " + item.FirstName + " " + item.SurName + " " + item.PhoneNumber + " " + item.EmailAddress + "\n";
+        }
+        return "ID" + " " + "FirstName" + " " + "SurName" + " " + "Phone Number" + " " + "Email Address" +
+                '\n' + a;
     }
 }

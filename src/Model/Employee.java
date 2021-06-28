@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.Employees;
 
-public class Employee {
+public class Employee implements EmployeeManagement{
     public static String requiredpermissions = "employee";
     public int ID;
     public String FirstName;
@@ -72,4 +72,12 @@ public class Employee {
         return Salary;
     }
 
+    public String GetAll() {
+        String a = "";
+        for (Employee item : Employees) {
+            a += item.ID + " " + item.FirstName + " " + item.SurName + " " + item.PhoneNumber + " " + item.EmailAddress + " " + item.Salary + "\n";
+        }
+        return "ID" + " " + "FirstName" + " " + "SurName" + " " + "Phone Number" + " " + "Email Address" + " " + "Salary" +
+                '\n' + a;
+    }
 }

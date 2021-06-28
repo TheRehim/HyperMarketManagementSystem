@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.CashierSale;
 
-public class CashierSales {
+public class CashierSales implements CashierManagement{
     public static String requiredpermissions = "cashiersales";
     public int CSID;
     public int CSCashierID;
@@ -39,5 +39,14 @@ public class CashierSales {
 
     public void setCSProductID(int CSProductID) {
         this.CSProductID = CSProductID;
+    }
+
+    public String GetAll() {
+        String a = "";
+        for (CashierSales item : CashierSale) {
+            a += item.CSID + " " + item.CSCashierID + " " + item.CSProductID + "\n";
+        }
+        return "ID" + " " + "Cashier ID" + " " + "Product ID" +
+                '\n' + a;
     }
 }

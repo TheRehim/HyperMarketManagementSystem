@@ -2,7 +2,7 @@ package Model;
 
 import static Model.DataBaseClasses.ShoppingCarts;
 
-public class ShoppingCart{
+public class ShoppingCart implements ShoppingCartManagement{
     public static String requiredpermissions = "shoppingcart";
     public int SCID;
     public int SCCustomerID;
@@ -39,5 +39,14 @@ public class ShoppingCart{
 
     public void setSCProductID(int SCProductID) {
         this.SCProductID = SCProductID;
+    }
+
+    public String GetAll() {
+        String a = "";
+        for (ShoppingCart item : ShoppingCarts) {
+            a += item.SCID + " " + item.SCCustomerID + " " + item.SCProductID + "\n";
+        }
+        return "ID" + " " + "Customer ID" + " " + "Product ID" +
+                '\n' + a;
     }
 }
